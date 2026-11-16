@@ -1,0 +1,6 @@
+<!DOCTYPE html><html lang="en" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sign in | Campus Share</title><link rel="stylesheet" href="/css/app.css"></head><body>
+<header class="topbar"><a class="brand" href="/home">Campus <span>Share</span></a><nav><a href="/browse">Browse</a><a href="/register">Create account</a></nav></header>
+<main class="auth-wrap"><section class="card auth-card"><p class="eyebrow">WELCOME BACK</p><h1>Sign in</h1><p class="muted">Use your campus account to continue.</p>
+<div class="notice error" th:if="${error}" th:text="${error}"></div><div class="notice success" th:if="${success}" th:text="${success}"></div>
+<form method="post" action="/login" class="stack"><label>Email address<input type="email" name="email" required autocomplete="username"></label><label>Password<input type="password" name="password" required autocomplete="current-password"></label><button class="btn" type="submit">Sign in</button></form>
+<p class="muted">New to Campus Share? <a href="/register">Create an account</a>.</p></section></main></body></html>

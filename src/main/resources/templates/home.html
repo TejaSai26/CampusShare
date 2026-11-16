@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Campus Share | Home</title><link rel="stylesheet" href="/css/app.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="/home">Campus <span>Share</span></a><nav><a href="/browse">Browse resources</a><a th:if="${signedIn}" href="/dashboard">Dashboard</a><span class="nav-welcome" th:if="${signedIn}" th:text="|Hi, ${currentMemberName}|">Hi, Member</span><a th:unless="${signedIn}" href="/login">Sign in</a><a class="btn" th:unless="${signedIn}" href="/register">Join campus</a><form th:if="${signedIn}" method="post" action="/logout" class="inline"><button class="btn secondary" type="submit">Sign out</button></form></nav></header>
+<main class="hero">
+<p class="eyebrow">CAMPUS RESOURCE SHARING</p><h1>Share more.<br><span class="accent">Own less.</span></h1>
+<p class="lead">A campus community where students, faculty and staff can lend, discover and borrow useful resources — from calculators and bicycles to projectors and lab equipment.</p>
+<div class="actions"><a class="btn" href="/browse">Explore resources</a><a class="btn secondary" th:if="${signedIn}" href="/dashboard">Go to dashboard</a><a class="btn secondary" th:unless="${signedIn}" href="/register">Create an account</a></div>
+<section class="feature-grid"><article class="card"><h3>Discover</h3><p>Find useful resources shared by people across your campus.</p></article><article class="card"><h3>Share</h3><p>List items you own and make them available to your community.</p></article><article class="card"><h3>Borrow responsibly</h3><p>Request resources and coordinate reservations with their owners.</p></article></section>
+</main><footer class="footer">Campus Share · Campus Resource Sharing and Management System</footer>
+</body></html>
